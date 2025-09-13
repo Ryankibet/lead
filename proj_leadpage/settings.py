@@ -117,24 +117,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-ROOT_URLCONF = 'proj_leadpage.urls'   # correct
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
+ROOT_URLCONF = 'proj_leadpage.urls'
 
 STATIC_URL = '/static/'
-
-# Where collectstatic will copy everything for production
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Tell Django where your "source" static files are during development
-STATICFILES_DIRS = [
-    BASE_DIR / "Static",   # 👈 make sure this matches your folder name exactly
-]
-
-# Whitenoise for serving static files in production
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = [BASE_DIR / "static"]   # add this line
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
