@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: leadpage-app   # you can change this name
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: gunicorn proj_leadpage.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: proj_leadpage.settings
+      - key: PYTHON_VERSION
+        value: 3.13.5
