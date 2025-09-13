@@ -1,0 +1,130 @@
+{% extends 'index.html' %}
+{%load static%}
+{% block title%} Service {%endblock%}
+{%block content%}
+
+<!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Services</span>
+        <h2>Our Services</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="services-showcase mt-5">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="featured-service" data-aos="fade-right" data-aos-delay="200">
+                <div class="service-image">
+                  <img src="{% static 'assets/img/services/services-3.webp' %}" alt="Featured Service" class="img-fluid">
+                </div>
+                <div class="service-overlay">
+                  <div class="overlay-content">
+                    <h3>Digital Transformation</h3>
+                    <p>Revolutionizing businesses through cutting-edge technology solutions and strategic digital initiatives.</p>
+                    <a href="service-details.html" class="service-link">
+                      <span>Discover More</span>
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="services-list">
+
+                <div class="service-item" data-aos="fade-left" data-aos-delay="100">
+                  <div class="service-icon">
+                    <i class="bi bi-palette"></i>
+                  </div>
+                  <div class="service-content">
+                    <h4><a href="service-details.html">Brand Strategy</a></h4>
+                    <p>Crafting compelling brand narratives that resonate with your target audience and establish market leadership.</p>
+                  </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-left" data-aos-delay="200">
+                  <div class="service-icon">
+                    <i class="bi bi-code-slash"></i>
+                  </div>
+                  <div class="service-content">
+                    <h4><a href="service-details.html">Technical Development</a></h4>
+                    <p>Building scalable solutions with modern technologies that drive efficiency and enhance user experiences.</p>
+                  </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-left" data-aos-delay="300">
+                  <div class="service-icon">
+                    <i class="bi bi-graph-up-arrow"></i>
+                  </div>
+                  <div class="service-content">
+                    <h4><a href="service-details.html">Growth Analytics</a></h4>
+                    <p>Leveraging data-driven insights to optimize performance and accelerate sustainable business growth.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="additional-services mt-5">
+          <div class="row g-5">
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-card">
+                <div class="card-image">
+                  <img src="{% static 'assets/img/services/services-7.webp' %}" alt="Consulting Services" class="img-fluid">
+                </div>
+                <div class="card-body">
+                  <h5><a href="service-details.html">Strategic Consulting</a></h5>
+                  <p>Expert guidance to navigate complex business challenges and identify new opportunities for sustainable growth and market expansion.</p>
+                  <a href="service-details.html" class="read-more">
+                    Learn More <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card">
+                <div class="card-image">
+                  <img src="{% static 'assets/img/services/services-9.webp' %}" alt="Digital Marketing" class="img-fluid">
+                </div>
+                <div class="card-body">
+                  <h5><a href="service-details.html">Digital Marketing</a></h5>
+                  <p>Comprehensive marketing strategies that amplify your online presence and drive meaningful engagement across all digital channels.</p>
+                  <a href="service-details.html" class="read-more">
+                    Learn More <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card">
+                <div class="card-image">
+                  <img src="{% static 'assets/img/services/services-11.webp' %}" alt="Innovation Labs" class="img-fluid">
+                </div>
+                <div class="card-body">
+                  <h5><a href="service-details.html">Innovation Labs</a></h5>
+                  <p>Experimental environments where breakthrough ideas come to life through rapid prototyping and collaborative innovation processes.</p>
+                  <a href="service-details.html" class="read-more">
+                    Learn More <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+{%endblock%}
