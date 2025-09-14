@@ -221,3 +221,21 @@
 .alert-warning { background: #fff3cd; color: #856404; }
 
 
+@media (max-width: 768px) {
+  #navmenu ul {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 10px;
+    background: #fff;   /* optional: give a white dropdown */
+    padding: 15px;
+    position: absolute;
+    top: 60px;   /* adjust below header */
+    right: 0;
+    width: 220px;
+    display: none; /* hidden by default */
+  }
+
+  #navmenu ul.active {
+    display: flex; /* show when toggled */
+  }
+}
