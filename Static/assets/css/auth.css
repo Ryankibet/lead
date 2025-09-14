@@ -234,38 +234,3 @@
   gap: 15px;
   list-style: none;
 }
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;       /* stack items vertically */
-    align-items: flex-start;      /* align them to the left (you can use center if you want centered) */
-    background: #222;             /* dropdown background */
-    position: absolute;
-    top: 60px;                    /* position under navbar */
-    right: 0;
-    width: 100%;                  /* full width */
-    padding: 15px;
-    display: none;                /* hidden until toggled */
-  }
-
-  .navbar ul li {
-    width: 100%;                  /* make each link stretch */
-    padding: 10px 0;              /* spacing between items */
-    border-bottom: 1px solid #444; /* divider line */
-  }
-
-  .navbar ul li a {
-    display: block;
-    width: 100%;                  /* full clickable width */
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .navbar ul.active {
-    display: flex;                /* show when toggled */
-  }
-
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-  }
-}
