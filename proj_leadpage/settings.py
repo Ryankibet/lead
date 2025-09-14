@@ -110,7 +110,6 @@ USE_TZ = True
 
 ROOT_URLCONF = 'proj_leadpage.urls'
 
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]   # add this line
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

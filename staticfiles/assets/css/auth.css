@@ -146,14 +146,14 @@
 
 #navmenu ul li {
   list-style: none;
-  margin: 0 12px;
+  margin: 0 4px;
 }
 
 #navmenu ul li.nav-right {
   margin-left: auto !important;  /* pushes this group all the way right */
   display: flex;
   align-items: center;
-  gap: 15px;                     /* spacing between Hi user, login, logout */
+  gap: 4px;                     /* spacing between Hi user, login, logout */
   font-weight: 600;
 }
 
@@ -220,40 +220,22 @@
 .alert-info    { background: #d1ecf1; color: #0c5460; }
 .alert-warning { background: #fff3cd; color: #856404; }
 
-.navbar {
-  display: flex;
-  flex-wrap: wrap;       /* allow wrapping on small screens */
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.navbar ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  list-style: none;
-}
 
 @media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
+  #navmenu ul {
+    flex-direction: column !important;
     align-items: flex-start;
-    background: #222;      /* same color as navbar */
+    gap: 10px;
+    background: #fff;   /* optional: give a white dropdown */
+    padding: 15px;
     position: absolute;
-    top: 60px;             /* below header */
+    top: 60px;   /* adjust below header */
     right: 0;
-    width: 200px;
-    padding: 10px;
-    display: none;         /* hidden until toggled */
+    width: 220px;
+    display: none; /* hidden by default */
   }
 
-  .navbar ul.active {
-    display: flex;         /* show when toggled */
-  }
-
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
+  #navmenu ul.active {
+    display: flex; /* show when toggled */
   }
 }
