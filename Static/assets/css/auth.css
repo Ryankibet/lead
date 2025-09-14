@@ -139,25 +139,39 @@
 ================================ */
 @media (max-width: 768px) {
   #navmenu ul {
-    flex-direction: column;   /* stack vertically */
-    align-items: flex-start;
-    gap: 12px;
-    background: #fff;
-    padding: 15px;
-    position: absolute;
-    top: 60px;  /* below header */
-    right: 0;
-    width: 220px;
-    display: none; /* hidden by default */
+    flex-direction: column !important;   /* force vertical */
+    align-items: flex-start !important;
+    gap: 12px !important;
+    background: #fff !important;
+    padding: 15px !important;
+    position: absolute !important;
+    top: 60px !important;
+    right: 0 !important;
+    width: 220px !important;
+    display: none !important; /* hidden by default */
   }
 
   #navmenu ul.active {
-    display: flex; /* show when toggled */
+    display: flex !important; /* show when toggled */
   }
 
   .mobile-nav-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 24px;
+    display: block !important;
+    cursor: pointer !important;
+    font-size: 24px !important;
   }
 }
+
+/* Force mobile nav vertical */
+@media (max-width: 768px) {
+  #navmenu ul {
+    flex-direction: column !important;  /* stack vertically */
+    align-items: flex-start !important;
+    gap: 12px !important;               /* space between items */
+  }
+
+  #navmenu ul li {
+    margin: 8px 0 !important;           /* vertical spacing */
+  }
+}
+
