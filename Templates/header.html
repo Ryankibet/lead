@@ -20,19 +20,19 @@
   </div>
 
   <div class="nav-wrap">
-    <div class="container d-flex justify-content-center position-relative">
-      <nav id="navmenu" class="navmenu">
-        <ul>
-  <li><a href="{% url 'leadpage:index' %}" class="active">Home</a></li>
-  <li><a href="{% url 'leadpage:about' %}">About</a></li>
-  <li><a href="{% url 'leadpage:features' %}">Features</a></li>
-  <li><a href="{% url 'leadpage:services' %}">Services</a></li>
-  <li><a href="{% url 'leadpage:pricing' %}">Pricing</a></li>
-  <li><a href="{% url 'leadpage:portfolio' %}">Portfolio</a></li>
-  <li><a href="{% url 'leadpage:team' %}">Team</a></li>
-  <li><a href="{% url 'leadpage:contact' %}">Contact</a></li>
-
- {% if user.is_authenticated %}
+      <div class="container d-flex justify-content-center position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="{% url 'leadpage:index' %}" class="active">Home</a></li>
+            <li><a href="{% url 'leadpage:about' %}">About</a></li>
+            <li><a href="{% url 'leadpage:features' %}">Features</a></li>
+            <li><a href="{% url 'leadpage:services' %}">Services</a></li>
+            <li><a href="{% url 'leadpage:pricing' %}">Pricing</a></li>
+            <li><a href="{% url 'leadpage:portfolio' %}">Portfolio</a></li>
+            <li><a href="{% url 'leadpage:team' %}">Team</a></li>
+            <li><a href="{% url 'leadpage:contact' %}">Contact</a></li>
+            
+          {% if user.is_authenticated %}
     <!-- push to far right -->
     <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
     <li><span class="ms-2">Hi, {{ user.username }}</span></li>
@@ -40,11 +40,10 @@
     <li><a href="{% url 'accounts:register' %}">Register</a></li>
     <li><a href="{% url 'accounts:login' %}">Login</a></li>
   {% endif %}
-</ul>
-
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
     </div>
-  </div>
 </header>
 
