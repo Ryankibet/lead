@@ -220,22 +220,17 @@
 .alert-info    { background: #d1ecf1; color: #0c5460; }
 .alert-warning { background: #fff3cd; color: #856404; }
 
+.navbar {
+  display: flex;
+  flex-wrap: wrap;       /* allow wrapping on small screens */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
 
-@media (max-width: 768px) {
-  #navmenu ul {
-    flex-direction: column !important;
-    align-items: flex-start;
-    gap: 10px;
-    background: #fff;   /* optional: give a white dropdown */
-    padding: 15px;
-    position: absolute;
-    top: 60px;   /* adjust below header */
-    right: 0;
-    width: 220px;
-    display: none; /* hidden by default */
-  }
-
-  #navmenu ul.active {
-    display: flex; /* show when toggled */
-  }
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
 }
