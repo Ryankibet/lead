@@ -31,31 +31,35 @@
             </p>
           </div>
 
-          <form action="forms/contact.php" method="post" class="php-email-form">
+          <!-- ✅ Corrected form -->
+          <form method="post" action="{% url 'leadpage:contact' %}">
+            {% csrf_token %}
             <div class="row g-3">
               <div class="col-12 col-md-6">
-                <input type="text" name="name" class="form-control" id="userName" placeholder="Your Name" required>
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
               </div>
               <div class="col-12 col-md-6">
-                <input type="email" name="email" class="form-control" id="userEmail" placeholder="Your Email" required>
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
               </div>
               <div class="col-12 col-md-6">
-                <input type="tel" name="phone" class="form-control" id="userPhone" placeholder="Your Phone">
+                <input type="tel" name="phone" class="form-control" placeholder="Your Phone">
               </div>
               <div class="col-12 col-md-6">
-                <input type="text" name="subject" class="form-control" id="messageSubject" placeholder="Subject" required>
+                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
               </div>
               <div class="col-12">
-                <textarea name="message" class="form-control" id="userMessage" rows="5" placeholder="Tell us about your project" required></textarea>
+                <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your project" required></textarea>
               </div>
             </div>
 
             <!-- Form Feedback -->
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
+            {% if messages %}
+              <div class="my-3">
+                {% for message in messages %}
+                  <div class="alert alert-success">{{ message }}</div>
+                {% endfor %}
+              </div>
+            {% endif %}
 
             <button type="submit" class="btn btn-outline-light mt-3">
               Send Message <i class="bi bi-arrow-right"></i>

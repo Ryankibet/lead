@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import ContactMessage
+
 
 # Create your views here.
 def index(request):
@@ -6,9 +9,6 @@ def index(request):
 
 def about(request):
     return render(request, "about.html")
-
-def contact(request):
-    return render(request, "contact.html")
 
 def features(request):
     return render(request, "features.html")
@@ -27,4 +27,26 @@ def testimonials(request):
 
 def team(request):
     return render(request, "team.html")
-    
+
+def contact(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
+
+        # Save directly to database
+        ContactMessage.objects.create(
+            name=name,
+            email=email,
+            phone=phone,
+            subject=subject,
+            message=message
+        )
+
+        messages.success(request, "Your message has been sent. Thank you!")
+        return redirect("leadpage:contact")
+
+    return render(request, "contact.html")
+

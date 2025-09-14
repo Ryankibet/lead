@@ -1,5 +1,6 @@
 {%load static%}
 
+<link rel="stylesheet" href="{% static 'assets/css/auth.css' %}">
 <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl position-relative">
 
@@ -33,6 +34,21 @@
             <li><a href="{% url 'leadpage:portfolio' %}">Portfolio</a></li>
             <li><a href="{% url 'leadpage:team' %}">Team</a></li>
             <li><a href="{% url 'leadpage:contact' %}">Contact</a></li>
+             <li class="nav-right">
+      {% if user.is_authenticated %}
+      
+        <a href="{% url 'accounts:logout' %}">Logout</a> 
+        &nbsp;&nbsp;
+        Hi, {{ user.username }}
+      {% else %}
+        <a href="{% url 'accounts:register' %}">Register</a> |
+        <a href="{% url 'accounts:login' %}">Login</a> 
+        
+      {% endif %}
+    </li>
+    </div>
+            
+        
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

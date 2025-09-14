@@ -121,3 +121,14 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li>
+
+
+     {% if user.is_authenticated %}
+          <!-- Show when logged in -->
+          <li><a class="nav-link scrollto" href="#">Hi, {{ user.username }}</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'accounts:logout' %}">Logout</a></li>
+        {% else %}
+          <!-- Show when logged out -->
+          <li><a class="nav-link scrollto" href="{% url 'accounts:login' %}">Login</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'accounts:register' %}">Register</a></li>
+        {% endif %}
