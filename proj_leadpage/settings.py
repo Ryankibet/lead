@@ -111,7 +111,7 @@ USE_TZ = True
 ROOT_URLCONF = 'proj_leadpage.urls'
 
 STATICFILES_DIRS = [BASE_DIR / "static"]   # add this line
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # where collectstatic will copy them
+
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
@@ -126,3 +126,15 @@ LOGOUT_REDIRECT_URL = "/"
 
 
 
+STATIC_URL = "/static/"
+
+# Where collectstatic will put all files
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# Tell Django where your custom static files are (like assets/css/auth.css)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "assets"),  # <-- change to your real folder
+]
+
+# Whitenoise storage for production
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
