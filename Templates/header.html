@@ -32,13 +32,12 @@
   <li><a href="{% url 'leadpage:team' %}">Team</a></li>
   <li><a href="{% url 'leadpage:contact' %}">Contact</a></li>
 
-  <!-- Push this li to the far right -->
  {% if user.is_authenticated %}
     <!-- push to far right -->
-    <li class="ms-auto"><a href="{% url 'accounts:logout' %}">Logout</a></li>
+    <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
     <li><span class="ms-2">Hi, {{ user.username }}</span></li>
   {% else %}
-    <li class="ms-auto"><a href="{% url 'accounts:register' %}">Register</a></li>
+    <li><a href="{% url 'accounts:register' %}">Register</a></li>
     <li><a href="{% url 'accounts:login' %}">Login</a></li>
   {% endif %}
 </ul>
