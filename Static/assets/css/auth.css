@@ -125,7 +125,7 @@
   #navmenu ul {
     display: none;              /* hidden by default */
     flex-direction: column;     /* stack vertically */
-    background: #fff;
+    background: #0c0808;
     position: absolute;
     top: 60px;                  /* just below header */
     right: 0;
