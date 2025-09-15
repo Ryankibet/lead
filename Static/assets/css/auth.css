@@ -142,7 +142,7 @@
 
   /* Make nav links visible on black */
   #navmenu ul li a {
-    color: #fff !important;     /* white font */
+    color: #150e0e !important;     /* white font */
     text-decoration: none;
     font-weight: 600;
   }
