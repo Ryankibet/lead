@@ -111,15 +111,16 @@
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
   <script>
-  // Auto hide messages after 4 seconds
-  setTimeout(function() {
-    const alerts = document.querySelectorAll('#django-messages .alert');
-    alerts.forEach(alert => {
-      alert.style.opacity = '0';
-      setTimeout(() => alert.remove(), 1000); // remove after fade
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".navbar ul");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
     });
-  }, 4000);
+  });
 </script>
+
 
 </body>
 
