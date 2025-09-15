@@ -1,82 +1,86 @@
-/* auth.css */
-
+/* ============================
+   AUTH PAGES
+============================ */
 .auth-container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f8f9fa;
-    padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 30px;
 }
 
 .auth-card {
-    width: 100%;
-    max-width: 420px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .auth-card h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
 }
 
 .auth-card label {
-    font-weight: 500;
-    color: #444;
+  font-weight: 500;
+  color: #444;
 }
 
 .auth-card input {
-    width: 100%;
-    margin-top: 6px;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    outline: none;
-    transition: border 0.2s;
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s;
 }
 
 .auth-card input:focus {
-    border-color: #cc5500;
-    box-shadow: 0 0 5px rgba(204,85,0,0.4);
+  border-color: #cc5500;
+  box-shadow: 0 0 5px rgba(204,85,0,0.4);
 }
 
 .btn-orange {
-    background: #cc5500;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
+  background: #cc5500;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .btn-orange:hover {
-    background: #a84400;
+  background: #a84400;
 }
 
 .auth-footer {
-    text-align: center;
-    margin-top: 15px;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .auth-footer a {
-    color: #cc5500;
-    font-weight: 600;
-    text-decoration: none;
+  color: #cc5500;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .auth-footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
+/* ============================
+   NAVBAR
+============================ */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -84,122 +88,75 @@
   padding: 12px 30px;
   background: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: relative;
 }
 
-.nav-links {
+.navbar ul {
   display: flex;
   list-style: none;
-  width: 100%;
   margin: 0;
   padding: 0;
+  gap: 15px;
 }
 
-.nav-links li {
-  margin: 0 12px;
+.navbar ul li {
+  font-weight: 600;
 }
 
 .nav-right {
-  margin-left: auto; /* pushes it to the furthest right */
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 20px;
-  font-weight: 600;
-}
-.navmenu ul {
-  display: flex;
-  align-items: center;
-  width: 100%;
 }
 
-.navmenu ul .nav-right {
-  margin-left: auto;  /* push far right */
-  display: flex;
-  align-items: center;
-  gap: 12px; /* spacing between items */
-}
-
-.navmenu ul {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.navmenu ul .nav-right {
-  margin-left: auto;  /* push far right */
-  display: flex;
-  align-items: center;
-  gap: 12px; /* spacing between items */
+/* Hamburger icon */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
 }
 
 /* ============================
-   NAVBAR FIX
+   MOBILE NAV
 ============================ */
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  #navmenu ul {
+    display: none;              /* hidden by default */
+    flex-direction: column;     /* stack vertically */
+    background: #fff;
+    position: absolute;
+    top: 60px;                  /* just below header */
+    right: 0;
+    width: 220px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    z-index: 999;
+  }
 
-#navmenu ul {
-  display: flex !important;      /* force flexbox */
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  #navmenu ul.active {
+    display: flex;              /* show when toggled */
+  }
+
+  #navmenu ul li {
+    margin: 10px 0;
+  }
+
+  .mobile-nav-toggle {
+    cursor: pointer;
+    font-size: 26px;
+    margin-left: auto;
+  }
 }
 
-#navmenu ul li {
-  list-style: none;
-  margin: 0 4px;
-}
 
-#navmenu ul li.nav-right {
-  margin-left: auto !important;  /* pushes this group all the way right */
-  display: flex;
-  align-items: center;
-  gap: 4px;                     /* spacing between Hi user, login, logout */
-  font-weight: 600;
-}
-
+/* ============================
+   MESSAGES
+============================ */
 .messages {
-  margin: 10px auto;
-  max-width: 900px;
-  padding: 5px;
-}
-
-.alert {
-  padding: 10px 15px;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-.alert-success {
-  background-color: #d4edda;
-  color: #155724; /* dark green text */
-  border: 1px solid #c3e6cb;
-}
-
-.alert-error,
-.alert-danger {
-  background-color: #f8d7da;
-  color: #721c24; /* dark red text */
-  border: 1px solid #f5c6cb;
-}
-
-.alert-warning {
-  background-color: #fff3cd;
-  color: #856404; /* dark yellow text */
-  border: 1px solid #ffeeba;
-}
-
-.alert-info {
-  background-color: #d1ecf1;
-  color: #0c5460; /* dark blue text */
-  border: 1px solid #bee5eb;
-}
-
-.messages {
-  margin-top: 70px; /* push messages below navbar */
-}
-
-#django-messages {
-  margin: 70px auto 20px auto; /* push below navbar */
+  margin: 70px auto 20px auto;
   width: 90%;
   max-width: 600px;
   text-align: center;
@@ -219,23 +176,3 @@
 .alert-error   { background: #f8d7da; color: #721c24; }
 .alert-info    { background: #d1ecf1; color: #0c5460; }
 .alert-warning { background: #fff3cd; color: #856404; }
-
-
-@media (max-width: 768px) {
-  #navmenu ul {
-    flex-direction: column !important;
-    align-items: flex-start;
-    gap: 10px;
-    background: #fff;   /* optional: give a white dropdown */
-    padding: 15px;
-    position: absolute;
-    top: 60px;   /* adjust below header */
-    right: 0;
-    width: 220px;
-    display: none; /* hidden by default */
-  }
-
-  #navmenu ul.active {
-    display: flex; /* show when toggled */
-  }
-}
