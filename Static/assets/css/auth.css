@@ -120,33 +120,37 @@
 /* ============================
    MOBILE NAV
 ============================ */
+/* Mobile menu styles */
 @media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;       /* stack vertically */
-    align-items: flex-start;
+  #navmenu ul {
+    display: none;              /* hidden by default */
+    flex-direction: column;     /* stack vertically */
     background: #fff;
     position: absolute;
-    top: 60px;
+    top: 60px;                  /* just below header */
     right: 0;
-    width: 200px;
+    width: 220px;
     padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    display: none;                /* hidden until active */
+    z-index: 999;
   }
 
-  .navbar ul li {
+  #navmenu ul.active {
+    display: flex;              /* show when toggled */
+  }
+
+  #navmenu ul li {
     margin: 10px 0;
   }
 
-  .navbar ul.active {
-    display: flex;                /* show when toggled */
-  }
-
-  .menu-toggle {
-    display: block;               /* only show hamburger on mobile */
+  .mobile-nav-toggle {
+    cursor: pointer;
+    font-size: 26px;
+    margin-left: auto;
   }
 }
+
 
 /* ============================
    MESSAGES

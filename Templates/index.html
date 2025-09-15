@@ -110,16 +110,21 @@
 
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
+ 
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".navbar ul");
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.querySelector(".mobile-nav-toggle");
+  const navMenu = document.querySelector("#navmenu ul");
 
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
+  if (toggle && navMenu) {
+    toggle.addEventListener("click", function() {
+      navMenu.classList.toggle("active");
+      this.classList.toggle("bi-x");  // switch to "X" icon when open
     });
-  });
+  }
+});
 </script>
+
 
 
 </body>
