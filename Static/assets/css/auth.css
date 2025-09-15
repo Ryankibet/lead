@@ -117,15 +117,11 @@
   font-size: 24px;
 }
 
-/* ============================
-   MOBILE NAV
-============================ */
-/* Mobile menu styles */
 @media (max-width: 768px) {
   #navmenu ul {
     display: none;              /* hidden by default */
     flex-direction: column;     /* stack vertically */
-    background: #0c0808;
+    background: #000;           /* black background */
     position: absolute;
     top: 60px;                  /* just below header */
     right: 0;
@@ -144,12 +140,25 @@
     margin: 10px 0;
   }
 
+  /* Make nav links visible on black */
+  #navmenu ul li a {
+    color: #fff !important;     /* white font */
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  #navmenu ul li a:hover {
+    color: #cc5500;             /* orange hover */
+  }
+
   .mobile-nav-toggle {
     cursor: pointer;
     font-size: 26px;
     margin-left: auto;
+    color: #fff;                /* make toggle white too */
   }
 }
+
 
 
 /* ============================
