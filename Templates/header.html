@@ -31,7 +31,8 @@
             <li><a href="{% url 'leadpage:portfolio' %}">Portfolio</a></li>
             <li><a href="{% url 'leadpage:team' %}">Team</a></li>
             <li><a href="{% url 'leadpage:contact' %}">Contact</a></li>
-            
+            <li><a href="{% url 'leadpage:messages_list' %}">My Contacts</a></li>
+
           {% if user.is_authenticated %}
     <!-- push to far right -->
     <li><a href="{% url 'accounts:logout' %}">Logout</a></li>

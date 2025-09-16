@@ -65,6 +65,36 @@ body {
   background-color: var(--background-color);
   font-family: var(--default-font);
 }
+body {
+  padding-top: 60px; /* adjust this to match your header height */
+}
+
+main, .content {
+    margin-top: 70px; /* match navbar height */
+}
+
+/* Default navbar (all other pages) */
+.navbar {
+  background: #000;  /* solid black */
+  position: relative;
+}
+
+/* Translucent navbar on homepage */
+.index-page .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* translucent black */
+  backdrop-filter: blur(10px);    /* adds a nice glass effect */
+  z-index: 999;
+}
+
+/* Prevent content hiding under fixed navbar */
+.index-page #hero {
+  padding-top: 80px; /* adjust based on your navbar height */
+}
+
 
 a {
   color: var(--accent-color);
@@ -151,6 +181,15 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0 0 0;
+}
+
+header.header {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+header.header a {
+  color: #fff !important;
 }
 
 .header .top-row {
